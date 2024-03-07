@@ -8,7 +8,7 @@ const port = 3000;
 // Configuración de CORS
 app.use(cors());
 
-// Configuración de multer para la carga de archivos
+// Configuración de multer para la carga de archivos múltiples
 const storage = multer.diskStorage({
   destination: './uploads',
   filename: (req, file, cb) => {
@@ -18,9 +18,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Ruta para subir archivos
-app.post('/upload', upload.single('file'), (req, res) => {
-  res.send('Archivo subido correctamente');
+// Ruta para subir archivos múltiples
+app.post('/multiupload', upload.array('files'), (req, res) => {
+  res.send('Archivos subidos correctamente');
 });
 
 app.listen(port, () => {

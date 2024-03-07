@@ -1,6 +1,8 @@
 import React from 'react';
 import UploadImage from './Components/UploadImage';
-import UploadFile from './Components/UploadFile'; // Importar el nuevo componente
+import UploadFile from './Components/UploadFile'; 
+import MultiFileUpload from './Components/MultiFileUpload';
+
 
 function App() {
   const handleImageUploaded = (imageData) => {
@@ -11,7 +13,8 @@ function App() {
     <div>
       <h1>Image Uploader</h1>
       <UploadImage onImageUploaded={handleImageUploaded} />
-      <UploadFile /> {/* Llamar al nuevo componente */}
+      <UploadFile /> 
+      <MultiFileUpload />
     </div>
   );
 }
